@@ -24,8 +24,13 @@ $('.box').on('click', function() {
     $(this).toggleClass(colorClass);
   });
   
-$('.toggle-blink').on('click', function(){
-  
+$('.toggle-blink').on('click', function() {
+  if (colorClass) {
+    $(this).toggleClass('opacity');
+    setInterval(function() {
+      $('.box.cyan, .box.yellow, .box.magenta').toggleClass('blink');
+    }, 350);
+  }
 });
 }
 
